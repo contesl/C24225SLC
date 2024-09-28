@@ -15,25 +15,26 @@
                     <li><a href="#">Qué es SportsPro</a></li>
                     <li><a href="#">Quiénes somos</a></li>
                     <li><a href="#">Comprar en Linea</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="static/contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </section>
-        <figure class="contenedorImagen centered"></figure>
+        <figure class="contenedorImagen centered">
             <img id="imagen-index" src="/img/header1.gif">
         </figure>
     </header>
     <main>
         <section class="form-box" >
-            <form id="form-contacto">
-                <label for="nombre"> Nombre y Apellidos*: </label>
-                <input id="nombre" type="text" name="nombre">
+            <form id="formContacto" action="https://formspree.io/f/xrbzwllb"
+                    method="POST">
+                <label for="contactoNombre"> Nombre y Apellidos*: </label>
+                <input id="contactoNombre" type="text" name="contactoNombre">
                 <br>
-                <label for="email">  Email*: </label>
-                <input type="email" name="email" id="email">
+                <label for="contactoEmail">  Email*: </label>
+                <input id="contactoEmail" name="contactoEmail">
                 <br>
-                <label for="pais">País: </label>
-                <select name="pais" id="pais">País:
+                <label for="contactoPais">País: </label>
+                <select name="contactoPais" id="contactoPais">País:
                     <option value="0">-</option>
                     <option value="01">Argentina</option>
                     <option value="02">Bolivia</option>
@@ -49,8 +50,8 @@
                     <option value="12">Venezuela</option>
                  </select>
                  <br>
-                <label for="mensaje">Mensaje: </label>
-                <textarea id="mensaje" name="menasaje" rows="10" cols="40">Escribe aquí tu mensaje...</textarea>
+                <label for="contactoMensaje">Mensaje: </label>
+                <textarea id="contactoMensaje" name="contactoMensaje" rows="10" cols="40">Escribe aquí tu mensaje...</textarea>
                 <br>
                 <input id="submit" class="ingresar" type="submit" value="Enviar">
             </form>
