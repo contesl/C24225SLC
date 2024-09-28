@@ -1,0 +1,193 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/*--- Para el Menu General --- */
+.menu-header {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.menu-sections ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-botton {
+    padding: 5px 15px;
+    background-color: rgba(85, 85, 85, 0);
+    color: var(--bg-colortext1);
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.menu-botton:hover {
+    opacity: 0.7;
+    background-color: rgb(131, 154, 237, 0.4);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--bg-colortext1);
+}
+
+li a:hover {
+    background-color: var(--bg-hover);
+    transition: 0.5s;
+}
+/*------FIN para menu general ----*/
+
+/*--- Lo usamos para la imagen que va despues del menu --*/
+.contenedorImagen {
+    width: auto;
+    height: auto;
+    text-align: center
+}
+
+/*-- Lo usamos para posicionar el footer --*/
+#fDescripcionEquipo {
+    text-align: center;
+}
+
+/*-- las definiciones de imagen las usamos para posicionar las imagenes
+     en diferentes pantallas en el header --*/
+.imagen {
+    height: auto;
+    width: auto;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.imagen-detalle {
+    width: 70%;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+#imagen-index {
+    height: 100%;
+    width: 50%;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.headerGIF {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+#cabecera {
+    display: "center";
+}
+
+.markesina {
+    display: "center";
+}
+
+.error-message{
+    color: red;
+}
+
+/*-- todas las forms la usamos en contacto.html --*/
+/*-- todas las forms la usamos en contacto.html --*/
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form-box {
+    width: 350px;
+    padding: 20px;
+    background-color: var(--bg-formBox);
+    border-radius: 5px;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-box label {
+    text-align: left;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--bg-formInput);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/*-- este es un tipo de boton --*/
+.ingresar {
+    background-color: green;
+    cursor: pointer;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    height: auto !important;
+    overflow: visible;
+    padding: 3px !important;
+    width: auto !important;
+}
+
+.ingresar:hover {
+    background-color: var(--bg-ingHover);
+    font-weight: bold;
+
+
+/*-- Lo usamos para posicionar el footer --*/
+#fDescripcionEquipo {
+    text-align: center;
+}
+
+
+/* Responsive */
+@media only screen and (max-width: 320px) {
+    header h1, h2 {
+        font-size: 24px;
+    }
+    .headerGIF {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    header h1, h2 {
+        font-size: 28px;
+    }
+
+    .headerGIF {
+        width: 80%;
+
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    header h1, h2 {
+        font-size: 36px;
+    }
+}
