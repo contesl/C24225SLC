@@ -25,6 +25,9 @@ body {
     --bg-colortext1: #ff528a;
     --bg-hover: #a997ff;
 }
+.headerSubtitulo {
+    text-align: center
+}
 .menu-header {
     display: flex;
     justify-content: space-around;
@@ -239,12 +242,41 @@ li a:hover {
         transform: scale(1.05);
         /* Efecto al pasar el mouse */
     }
+
+    /*--para reseñas--*/
+        /* Configuración del grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+    
+        .review {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .review h2 {
+            margin-top: 0;
+        }
+    
+        .review p {
+            margin: 0.5rem 0;
+        }
+    /*-- fin de las reseñas--*/
 /* Responsive */
 /* Media Queries */
 @media (max-width: 600px) {
     .card {
         flex: 1 1 100%;
         /* En pantallas pequeñas, las tarjetas ocupan el 100% */
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr;
     }
 }
     /* Pantallas pequeñas (móviles) */
