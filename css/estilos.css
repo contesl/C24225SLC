@@ -73,7 +73,7 @@ li a:hover {
     text-align: center;
     width:100%;
     height:50px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     display: grid;
     align-items: center;
@@ -208,11 +208,45 @@ li a:hover {
 .ingresar:hover {
     background-color: var(--bg-ingHover);
     font-weight: bold;
+}
+    /*para mostrar los productos en forma de cards*/
+.productos {
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite que las tarjetas se muevan a la siguiente fila */
+        justify-content: space-around;
 
+    }
 
+    .card {
+        flex: 1 1 300px;
+        /* Crece, se encoge y establece un ancho base de 300px */
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        /* Efecto al pasar el mouse */
+    }
 /* Responsive */
 /* Media Queries */
-
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+        /* En pantallas pequeñas, las tarjetas ocupan el 100% */
+    }
+}
     /* Pantallas pequeñas (móviles) */
     @media (max-width: 768px) {
         .menu-sections ul {
