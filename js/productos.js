@@ -101,6 +101,49 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
+document.addEventListener('DOMContentLoaded', () => {
+
+ 
+    const modalCarrito = document.getElementById('carritoModal');
+    if (modalCarrito) {
+        // Evitar el uso de scroll en pantallas pequeñas (menos de 768px de ancho)
+        const tablaCarrito = modalCarrito.querySelector('.table');
+        const listaCarrito = modalCarrito.querySelector('.carrito-lista');
+        
+        const ajustarModalCarrito = () => {
+            const anchoPantalla = window.innerWidth;
+            
+            if (anchoPantalla < 768) {
+                if (tablaCarrito) {
+                    tablaCarrito.style.display = 'none'; // Ocultar la tabla
+                }
+                if (listaCarrito) {
+                    listaCarrito.style.display = 'block'; // Mostrar la lista
+                }
+            } else {
+                if (tablaCarrito) {
+                    tablaCarrito.style.display = 'table'; // Mostrar la tabla
+                }
+                if (listaCarrito) {
+                    listaCarrito.style.display = 'none'; // Ocultar la lista
+                }
+            }
+        };
+
+        // Ejecutar la función para ajustar el contenido del modal según el tamaño de la pantalla
+        ajustarModalCarrito();
+
+        // Escuchar cambios de tamaño de la ventana para ajustar dinámicamente
+        window.addEventListener('resize', ajustarModalCarrito);
+    }
+
+    // Inicializar el carrito al cargar la página
+    actualizarCarrito();
+    
+});
+
+
+
 
     const actualizarCantidadCarrito = (id, cantidad) => {
         const producto = carrito.find(item => item.id == id);

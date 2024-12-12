@@ -299,6 +299,40 @@ body {
             margin: 0.5rem 0;
         }
     /*-- fin de las reseñas--*/
+        /* Estilos específicos para carritoModal */
+    
+        /* Ajustes generales para el modal */
+        .modal-dialog {
+            max-width: 100%;
+            margin: 10px;
+        }
+    
+        .modal-content {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    
+        /* Tabla responsive */
+        .modal-body {
+            overflow-x: auto;
+        }
+    
+        .table {
+            font-size: 0.9rem;
+            /* Reduce el tamaño de fuente */
+        }
+    
+        .table th,
+        .table td {
+            white-space: nowrap;
+            /* Evita que las celdas se rompan en múltiples líneas */
+        }
+    
+        /* Botones ajustados para pantallas pequeñas */
+        .modal-footer .btn {
+            font-size: 0.85rem;
+            padding: 8px 10px;
+        }
 /* Responsive */
 /* Media Queries */
 @media (max-width: 600px) {
@@ -358,6 +392,22 @@ body {
                 width: 100%;
                 height: auto;
             }
+                                .modal-dialog {
+                                    margin: 5px;
+                                }
+                
+                                .modal-header .modal-title {
+                                    font-size: 1.1rem;
+                                }
+                
+                                .table {
+                                    font-size: 0.8rem;
+                                }
+                
+                                .modal-footer .btn {
+                                    padding: 6px 8px;
+                                    font-size: 0.8rem;
+                                }
         }
 
 /* Móviles (pantallas pequeñas) */
