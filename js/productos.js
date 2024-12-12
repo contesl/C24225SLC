@@ -45,67 +45,104 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicializar el carrito desde localStorage
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            //---visualizacion carrito
-            const actualizarCarrito = () => {
-            const carritoTabla = document.getElementById('carritoTabla');
-            carritoTabla.innerHTML = '';
 
-            carrito.forEach(producto => {
-                const subtotal = producto.price * producto.quantity;
-                const fila = document.createElement('tr');
-                fila.innerHTML = `
-                    <td>${producto.title}</td>
-                    <td><input type="number" min="1" value="${producto.quantity}" class="form-control cantidadCarrito" data-id="${producto.id}"></td>
-                    <td>$${producto.price.toFixed(2)}</td>
-                    <td>$${subtotal.toFixed(2)}</td>
-                    <td><button class="btn btn-danger btn-sm eliminarCarrito" data-id="${producto.id}">Eliminar</button></td>
-                `;
-                carritoTabla.appendChild(fila);
-            });
+    // ---visualización del carrito
+    const actualizarCarrito = () => {
+        const carritoTabla = document.getElementById('carritoTabla');
+        carritoTabla.innerHTML = '';
 
-            // Eventos para cambiar cantidad o eliminar producto
-            document.querySelectorAll('.cantidadCarrito').forEach(input => {
-                input.addEventListener('change', event => {
-                    const id = event.target.dataset.id;
-                    const nuevaCantidad = parseInt(event.target.value, 10);
-                    actualizarCantidadCarrito(id, nuevaCantidad);
-                });
-            });
+        let totalGeneral = 0; // Variable para acumular el total general
 
-            document.querySelectorAll('.eliminarCarrito').forEach(btn => {
-                btn.addEventListener('click', event => {
-                    const id = event.target.dataset.id;
-                    eliminarDelCarrito(id);
-                });
-            });
-        };
+        carrito.forEach(producto => {
+            const subtotal = producto.price * producto.quantity;
+            totalGeneral += subtotal; // Sumar el subtotal al total general
 
-        const actualizarCantidadCarrito = (id, cantidad) => {
-            const producto = carrito.find(item => item.id == id);
-            if (producto) {
-                producto.quantity = cantidad;
-                guardarCarrito();
-                actualizarCarrito();
-            }
-        };
-
-        const eliminarDelCarrito = id => {
-            carrito = carrito.filter(producto => producto.id != id);
-            guardarCarrito();
-            actualizarCarrito();
-        };
-
-        // Vaciar el carrito
-        document.getElementById('vaciarCarrito').addEventListener('click', () => {
-            carrito = [];
-            guardarCarrito();
-            actualizarCarrito();
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${producto.title}</td>
+                <td><input type="number" min="1" value="${producto.quantity}" class="form-control cantidadCarrito" data-id="${producto.id}"></td>
+                <td>$${producto.price.toFixed(2)}</td>
+                <td>$${subtotal.toFixed(2)}</td>
+                <td><button class="btn btn-danger btn-sm eliminarCarrito" data-id="${producto.id}">Eliminar</button></td>
+            `;
+            carritoTabla.appendChild(fila);
         });
 
-        // Inicializar el carrito al cargar la página
-        actualizarCarrito();
+        // Crear o actualizar la fila para mostrar el total general
+        const totalFila = document.getElementById('totalGeneralFila');
+        if (!totalFila) {
+            // Si la fila no existe, crearla
+            const nuevaFila = document.createElement('tr');
+            nuevaFila.id = 'totalGeneralFila';
+            nuevaFila.innerHTML = `
+                <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                <td><strong>$${totalGeneral.toFixed(2)}</strong></td>
+                <td></td>
+            `;
+            carritoTabla.appendChild(nuevaFila);
+        } else {
+            // Si la fila ya existe, actualizar su contenido
+            totalFila.querySelector('td:nth-child(4)').innerHTML = `<strong>$${totalGeneral.toFixed(2)}</strong>`;
+        }
 
-    //
+        // Eventos para cambiar cantidad o eliminar producto
+        document.querySelectorAll('.cantidadCarrito').forEach(input => {
+            input.addEventListener('change', event => {
+                const id = event.target.dataset.id;
+                const nuevaCantidad = parseInt(event.target.value, 10);
+                actualizarCantidadCarrito(id, nuevaCantidad);
+            });
+        });
+
+        document.querySelectorAll('.eliminarCarrito').forEach(btn => {
+            btn.addEventListener('click', event => {
+                const id = event.target.dataset.id;
+                eliminarDelCarrito(id);
+            });
+        });
+    };
+
+    const actualizarCantidadCarrito = (id, cantidad) => {
+        const producto = carrito.find(item => item.id == id);
+        if (producto) {
+            producto.quantity = cantidad;
+            guardarCarrito();
+            actualizarCarrito();
+        }
+    };
+
+    const eliminarDelCarrito = id => {
+        carrito = carrito.filter(producto => producto.id != id);
+        guardarCarrito();
+        actualizarCarrito();
+    };
+
+    // Vaciar el carrito
+    //document.getElementById('vaciarCarrito').addEventListener('click', () => {
+    //    carrito = [];
+    //    guardarCarrito();
+    //    actualizarCarrito();
+    //});
+    
+  // Confirmar Compra
+        document.getElementById('confirmarCompra').addEventListener('click', () => {
+            alert('Compra confirmada! Muchas Gracias!');
+            carrito = []; // Vaciar el carrito
+            guardarCarrito(); // Guardar el carrito vacío en localStorage
+            actualizarCarrito(); // Actualizar la visualización del carrito
+
+            // Cerrar automáticamente el modal del carrito
+            const modalElement = document.querySelector('#carritoModal'); // Ajusta el ID según tu modal
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+        });
+
+
+
+    // Inicializar el carrito al cargar la página
+    actualizarCarrito();
 
     const guardarCarrito = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));

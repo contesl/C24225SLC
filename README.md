@@ -1,4 +1,5 @@
 Trabajo practico de la Comision 24225 del Curso Front End JS 2024
+
 index.html es la pagina principal  
 -link a github pages: https://contesl.github.io/C24225SLC/
 -link a netifly: https://sportsprook.netlify.app/
