@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*uso de google fonts en el body de las paginas*/
+body {
+    font-family: "Audiowide", serif;
+}
+
+/*--- Para el menu y otros --- */
+:root {
+    --bg-formBox: #f6f8fa;
+    --bg-formInput: #ccc;
+    --bg-ingresar: #1c8f3d;
+    --bg-colorIngr: #fff;
+    --bg-ingHover: #1a7f37;
+    --bg-avisoInf: #666;
+    --bg-color: #e2dcff;
+    --bg-colorHeader: #4930cd;
+    --bg-colortext1: #ff528a;
+    --bg-hover: #a997ff;
+}
+
+/*-------------MENU-----------------------------*/
+/* Definir el color de los enlaces del navbar */
+/*-------------MENU-----------------------------*/
+/* Definir el color de los enlaces del navbar */
+
+.navbar-nav .nav-link {
+    color: var(--bg-colortext1);
+    transition: color 0.3s ease, transform 0.3s ease;
+
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f39c12;
+
+    transform: scale(1.1);
+
+    text-decoration: underline;
+
+}
+/*---------------------------------------------------------*/
+
+.headerSubtitulo {
+    text-align: center
+}
+
+/*--- Lo usamos para la imagen que va despues del menu --*/
+.contenedorImagen {
+    width: auto;
+    height: auto;
+    text-align: center
+}
+
+/*-- Lo usamos para posicionar el footer --*/
+#fDescripcionEquipo {
+    text-align: center;
+    width:100%;
+    height:50px;
+    position: relative;
+    bottom: 0;
+    display: grid;
+    align-items: center;
+    font-size: 15px;
+    color: var(--bg-colortext1);
+}
+    
+/*-- Lo usamos para quienesSomos     --*/
+/*-- sobre todo por el tema del iFrame --*/
+.section-container {
+    text-align: end;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(auto, auto);
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-containerImage {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*------ FIN de quienesSomos ----*/
+
+/*-- las definiciones de imagen las usamos para posicionar las imagenes
+     en diferentes pantallas en el header --*/
+.imagen {
+    height: auto;
+    width: auto;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.imagen-detalle {
+    width: 70%;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+#imagen-index {
+    height: 100%;
+    width: 50%;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.headerGIF {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+#cabecera {
+    display: "center";
+}
+
+.markesina {
+    display: "center";
+}
+
+.error-message{
+    color: red;
+}
+
+/*-- todas las forms la usamos en contacto.html --*/
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form-box {
+    width: 350px;
+    padding: 20px;
+    background-color: var(--bg-formBox);
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.1);*/
+}
+
+.form-box label {
+    text-align: left;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--bg-formInput);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/*-- este es un tipo de boton --*/
+.ingresar {
+    background-color: green;
+    cursor: pointer;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    height: auto !important;
+    overflow: visible;
+    padding: 3px !important;
+    width: auto !important;
+}
+
+.ingresar:hover {
+    background-color: var(--bg-ingHover);
+    font-weight: bold;
+}
+    /*para mostrar los productos en forma de cards*/
+.productos {
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite que las tarjetas se muevan a la siguiente fila */
+        justify-content: space-around;
+
+    }
+
+    .card {
+        flex: 1 1 300px;
+        /* Crece, se encoge y establece un ancho base de 300px */
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        /* Efecto al pasar el mouse */
+    }
+
+    /*--para reseñas--*/
+        /* Configuración del grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+    
+        .review {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .review h2 {
+            margin-top: 0;
+        }
+    
+        .review p {
+            margin: 0.5rem 0;
+        }
+    /*-- fin de las reseñas--*/
+/* Responsive */
+/* Media Queries */
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+        /* En pantallas pequeñas, las tarjetas ocupan el 100% */
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    /* Pantallas pequeñas (móviles) */
+    @media (max-width: 768px) {
+        .menu-sections ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-sections li {
+            margin-bottom: 10px;
+        }
+
+        form {
+            width: 90%;
+        }
+
+        .contenedorImagen img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /* Pantallas muy pequeñas (móviles en orientación vertical) */
+    @media (max-width: 480px) {
+        .menu-sections a {
+            font-size: 14px;
+        }
+
+        form {
+            padding: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea,
+        #submit {
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            height: auto;
+        }
+    }

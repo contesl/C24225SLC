@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Audiowide");
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 
 /* Reset styles */
 * {
@@ -12,7 +13,7 @@ body {
     font-family: "Audiowide", serif;
 }
 
-/*--- Para el Menu General --- */
+/*--- Para el menu y otros --- */
 :root {
     --bg-formBox: #f6f8fa;
     --bg-formInput: #ccc;
@@ -25,53 +26,38 @@ body {
     --bg-colortext1: #ff528a;
     --bg-hover: #a997ff;
 }
+
+/*-------------MENU-----------------------------*/
+/* Definir el color de los enlaces del navbar */
+.navbar-nav .nav-link {
+    color: var(--bg-colortext1);
+    transition: color 0.3s ease, transform 0.3s ease;
+
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f39c12;
+
+    transform: scale(1.1);
+
+    text-decoration: underline;
+
+}
+/*---------------------------------------------------------*/
+
 .headerSubtitulo {
     text-align: center
 }
-.menu-header {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-.menu-sections ul {
-    list-style-type: none;
-    padding: 0;
-}
-.menu-botton {
-    padding: 5px 15px;
-    background-color: rgba(85, 85, 85, 0);
-    color: var(--bg-colortext1);
-    cursor: pointer;
-    margin: 0 5px;
-}
-.menu-botton:hover {
-    opacity: 0.7;
-    background-color: rgb(131, 154, 237, 0.4);
-}
-li {
-    float: left;
-}
-li a {
-    display: block;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--bg-colortext1);
-}
-li a:hover {
-    background-color: var(--bg-hover);
-    transition: 0.5s;
-}
-/*------FIN para menu general ----*/
 
-/*--- Lo usamos para la imagen que va despues del menu --*/
+/*--- Para la imagen que va despues del menu --*/
 .contenedorImagen {
     width: auto;
     height: auto;
     text-align: center
+    margin-bottom: 10px;
 }
 
-/*-- Lo usamos para posicionar el footer --*/
+/*-- Para posicionar el footer --*/
 #fDescripcionEquipo {
     text-align: center;
     width:100%;
@@ -82,9 +68,10 @@ li a:hover {
     align-items: center;
     font-size: 15px;
     color: var(--bg-colortext1);
+
 }
     
-/*-- Lo usamos para quienesSomos     --*/
+/*--QUIENES SOMOS --*/
 /*-- sobre todo por el tema del iFrame --*/
 .section-container {
     text-align: end;
@@ -120,7 +107,7 @@ li a:hover {
 }
 /*------ FIN de quienesSomos ----*/
 
-/*-- las definiciones de imagen las usamos para posicionar las imagenes
+/*-- las definiciones de imagen son para posicionar las imagenes
      en diferentes pantallas en el header --*/
 .imagen {
     height: auto;
@@ -140,12 +127,12 @@ li a:hover {
 }
 
 #imagen-index {
-    height: 100%;
-    width: 50%;
+    height: auto;
+    width: auto;
     border: 0;
     display: block;
     margin: 0 auto;
-
+    margin-bottom: 0;
 }
 
 .headerGIF {
@@ -168,51 +155,64 @@ li a:hover {
     color: red;
 }
 
-/*-- todas las forms la usamos en contacto.html --*/
-.form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+/*-- Para contacto.html --*/
+/* Estilos específicos para centrar los campos del formulario en contacto.html */
+.contacto-page .contenedorImagen {
+    margin-bottom: 10px;
+    padding-bottom: 0;
 }
 
+.contacto-page #imagen-index {
+    margin-bottom: 0;
+}
+
+.contacto-page .form-container {
+    margin-top: 0;
+    padding-top: 0;
+}
 .form-box {
-    width: 350px;
-    padding: 20px;
-    background-color: var(--bg-formBox);
-    border-radius: 5px;
-    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+    gap: 15px;
 }
 
 .form-box label {
-    text-align: left;
+    display: block;
+    width: auto;
+    font-weight: bold;
 }
 
-.form-box input {
-    width: 100%;
+.form-box input,
+.form-box select,
+.form-box textarea {
+    width: auto;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid var(--bg-formInput);
     border-radius: 3px;
     box-sizing: border-box;
+    font-size: 1rem;
 }
 
-/*-- este es un tipo de boton --*/
+/* Centra el formulario dentro de su contenedor */
+.form-container {
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    min-height: auto;
+}
+
+/* Ajusta el botón de enviar para alinearse con los cambios */
 .ingresar {
-    background-color: green;
-    cursor: pointer;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    height: auto !important;
-    overflow: visible;
-    padding: 3px !important;
-    width: auto !important;
+    align-self: center;
+    background-color: var(--bg-colorIngr);
+    /* Centra el botón dentro del formulario */
 }
-
 .ingresar:hover {
     background-color: var(--bg-ingHover);
     font-weight: bold;
 }
-    /*para mostrar los productos en forma de cards*/
+
+/*-------------PRODUCTOS-----------------------*/
+/*para mostrar los productos en forma de cards*/
 .productos {
         display: flex;
         flex-wrap: wrap;

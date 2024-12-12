@@ -3,31 +3,56 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <title>Bienvenidos a SportsPro En Linea</title>
-<link rel="stylesheet" href="/css/estilos.css">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Bienvenidos a 2000s STYLE En Línea</title>
 </head>
 
 <body>
-    <header>
-        <section class="menu-header">
-            <nav class="menu-sections">
-                <ul>
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="/static/quienesSomos.html">Quiénes somos</a></li>
-                    <li><a href="/static/productos.html">Productos</a></li>
-                    <li><a href="/static/resenias.html">Reseñas</a></li>
-                    <li><a href="/static/contacto.html">Contacto</a></li>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="./index.html" style="color: var(--bg-colortext1);">2000s STYLE</a>
+
+            <!-- Botón para el menú colapsable -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces del menú -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html" style="color: var(--bg-colortext1);">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/static/quienesSomos.html"
+                            style="color: var(--bg-colortext1);">Quiénes somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/static/productos.html"
+                            style="color: var(--bg-colortext1);">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/static/resenias.html"
+                            style="color: var(--bg-colortext1);">Reseñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/static/contacto.html"
+                            style="color: var(--bg-colortext1);">Contacto</a>
+                    </li>
                 </ul>
-            </nav>
-        </section>
-    </header>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <main>
         <figure class="contenedorImagen centered">
-            <img id="imagen-index" src="/img/sportpro.gif">
+            <img id="imagen-index" src="/img/PersonalStyle.jpg">
         </figure>
     </main>
 
